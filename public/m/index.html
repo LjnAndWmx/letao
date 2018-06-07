@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的乐淘移动端首页</title>
+    <!-- 移动端的视口：让页面在移动端展示的时候不会缩放 -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="./images/favicon.ico">
+    <!-- 引入站点图标，rel填写icon表示引入站点图标，href的路径就是图标路径 -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.min.css">
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.min.css">
+    <link rel="stylesheet/less" href="./less/index.less">
+    <!-- less编译器文件less.js -->
+    <script src="./lib/less/less.js"></script>
+</head>
+<body>
+    <!-- 1.头部区域 -->
+    <header id="header">
+        <h4>
+            乐淘云购
+        </h4>
+        <a href="javascript:;" class="fa fa-search" aria-hidden="true"></a>
+    </header>
+    <!-- 2.轮播图区域 -->
+    <section id="slide">
+            <div class="mui-slider">
+                    <div class="mui-slider-group mui-slider-loop">
+                      <!--支持循环，需要重复图片节点-->
+                      <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="./images/banner4.png" /></a></div>
+                      <div class="mui-slider-item"><a href="#"><img src="./images/banner1.png" /></a></div>
+                      <div class="mui-slider-item"><a href="#"><img src="./images/banner2.png" /></a></div>
+                      <div class="mui-slider-item"><a href="#"><img src="./images/banner3.png" /></a></div>
+                      <div class="mui-slider-item"><a href="#"><img src="./images/banner4.png" /></a></div>
+                      <!--支持循环，需要重复图片节点-->
+                      <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="./images/banner1.png" /></a></div>
+                    </div>
+                    <div class="mui-slider-indicator">  
+                            <div class="mui-indicator mui-active"></div>  
+                            <div class="mui-indicator"></div>  
+                            <div class="mui-indicator"></div>  
+                            <div class="mui-indicator"></div>  
+                        </div>
+                  </div>
+    </section>
+    <!-- 3.导航区域 -->
+    <nav id="nav"></nav>
+    <!-- 4.广告区域 -->
+    <section id="banner"></section>
+    <!-- 5.品牌专区 -->
+    <section id="brand"></section>
+    <!-- 6.运动专区 -->
+    <section id="sport"></section>
+    <!-- 7.女士专区 -->
+    <section id="women"></section>
+    <!-- 8.男士专区 -->
+    <section id="man"></section>
+    <!-- 9.底部导航 -->
+    <section id="footer"></section>
+
+    <script src="./lib/mui/js/mui.min.js"></script>
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <script src="./lib/artTemplate/template.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>
