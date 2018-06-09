@@ -1,20 +1,76 @@
-@mainColor:#006699;
-// 头部区域
-#header{
-    background-color: @mainColor;
-    height: 45px;
-    >h4{
-        height: 45px;
-        line-height: 45px;
-        text-align: center;
-        margin: 0;
-        color: white;
-        font-weight: normal;
+@import './base.less';
+
+// 3.导航区域
+#nav {
+  padding: 10px;
+  .mui-row {
+    > div {
+      > img {
+        width: 100%;
+      }
     }
-    .fa-search{
-        position: absolute;
-        right: 15px;
-        top:15px;
-        color: white;
-    }
+  }
 }
+// <!-- 4.广告区域 -->
+#banner {
+  padding: 0 10px;
+  .mui-row {
+    > div {
+      > a {
+        display: block;
+        > img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+// <!-- 5.品牌专区 -->
+#brand{
+    padding:0 10px;
+   >div{
+       >a{
+           display: block;
+           >img{
+               width: 100%;
+           }
+       }
+   } 
+}
+
+// <!-- 6.运动专区 7.女士专区 8.男士专区-->
+#sport,#women,#man {
+  padding: 0 10px;
+  .title {
+    a {
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .content {
+      padding-top: 5px;
+    > div {
+      padding: 5px;
+      .product {
+        box-shadow: 0px 0px 10px #ccc;
+        display: block;
+        padding-bottom: 10px;
+        text-align: center;
+        > img {
+          width: 100%;
+        }
+        .detali {
+          padding: 5px 0;
+          .old-price {
+            color: #aaa;
+          }
+        }
+        > button {
+          background-color: @mainColor;
+        }
+      }
+    }
+  }
+}
+

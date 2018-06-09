@@ -16,8 +16,8 @@
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
   text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-xsoothing: antialiased;
+  -moz-osx-font-xsoothing: grayscale;
 }
 /* makes the font 33% larger relative to the icon container */
 .fa-lg {
@@ -958,7 +958,7 @@
 .fa-folder-open-o:before {
   content: "\f115";
 }
-.fa-smile-o:before {
+.fa-xsile-o:before {
   content: "\f118";
 }
 .fa-frown-o:before {

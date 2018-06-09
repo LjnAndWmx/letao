@@ -91,9 +91,9 @@ if (typeof jQuery === 'undefined') {
   // ALERT CLASS DEFINITION
   // ======================
 
-  var dismiss = '[data-dismiss="alert"]'
+  var dixsiss = '[data-dixsiss="alert"]'
   var Alert   = function (el) {
-    $(el).on('click', dismiss, this.close)
+    $(el).on('click', dixsiss, this.close)
   }
 
   Alert.VERSION = '3.3.6'
@@ -167,7 +167,7 @@ if (typeof jQuery === 'undefined') {
   // ALERT DATA-API
   // ==============
 
-  $(document).on('click.bs.alert.data-api', dismiss, Alert.prototype.close)
+  $(document).on('click.bs.alert.data-api', dixsiss, Alert.prototype.close)
 
 }(jQuery);
 
@@ -975,10 +975,10 @@ if (typeof jQuery === 'undefined') {
     this.escape()
     this.resize()
 
-    this.$element.on('click.dismiss.bs.modal', '[data-dismiss="modal"]', $.proxy(this.hide, this))
+    this.$element.on('click.dixsiss.bs.modal', '[data-dixsiss="modal"]', $.proxy(this.hide, this))
 
-    this.$dialog.on('mousedown.dismiss.bs.modal', function () {
-      that.$element.one('mouseup.dismiss.bs.modal', function (e) {
+    this.$dialog.on('mousedown.dixsiss.bs.modal', function () {
+      that.$element.one('mouseup.dixsiss.bs.modal', function (e) {
         if ($(e.target).is(that.$element)) that.ignoreBackdropClick = true
       })
     })
@@ -1034,10 +1034,10 @@ if (typeof jQuery === 'undefined') {
 
     this.$element
       .removeClass('in')
-      .off('click.dismiss.bs.modal')
-      .off('mouseup.dismiss.bs.modal')
+      .off('click.dixsiss.bs.modal')
+      .off('mouseup.dixsiss.bs.modal')
 
-    this.$dialog.off('mousedown.dismiss.bs.modal')
+    this.$dialog.off('mousedown.dixsiss.bs.modal')
 
     $.support.transition && this.$element.hasClass('fade') ?
       this.$element
@@ -1058,11 +1058,11 @@ if (typeof jQuery === 'undefined') {
 
   Modal.prototype.escape = function () {
     if (this.isShown && this.options.keyboard) {
-      this.$element.on('keydown.dismiss.bs.modal', $.proxy(function (e) {
+      this.$element.on('keydown.dixsiss.bs.modal', $.proxy(function (e) {
         e.which == 27 && this.hide()
       }, this))
     } else if (!this.isShown) {
-      this.$element.off('keydown.dismiss.bs.modal')
+      this.$element.off('keydown.dixsiss.bs.modal')
     }
   }
 
@@ -1101,7 +1101,7 @@ if (typeof jQuery === 'undefined') {
         .addClass('modal-backdrop ' + animate)
         .appendTo(this.$body)
 
-      this.$element.on('click.dismiss.bs.modal', $.proxy(function (e) {
+      this.$element.on('click.dixsiss.bs.modal', $.proxy(function (e) {
         if (this.ignoreBackdropClick) {
           this.ignoreBackdropClick = false
           return

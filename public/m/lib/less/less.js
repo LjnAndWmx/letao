@@ -390,7 +390,7 @@ module.exports = function(options, logger) {
 
     FileManager.prototype = new AbstractFileManager();
 
-    FileManager.prototype.alwaysMakePathsAbsolute = function alwaysMakePathsAbsolute() {
+    FileManager.prototype.alwayxsakePathsAbsolute = function alwayxsakePathsAbsolute() {
         return true;
     };
     FileManager.prototype.join = function join(basePath, laterPath) {
@@ -895,7 +895,7 @@ contexts.Eval.prototype.outOfParenthesis = function () {
     this.parensStack.pop();
 };
 
-contexts.Eval.prototype.isMathOn = function () {
+contexts.Eval.prototype.ixsathOn = function () {
     return this.strictMath ? (this.parensStack && this.parensStack.length) : true;
 };
 
@@ -1079,7 +1079,7 @@ module.exports = {
     'violet':'#ee82ee',
     'wheat':'#f5deb3',
     'white':'#ffffff',
-    'whitesmoke':'#f5f5f5',
+    'whitexsoke':'#f5f5f5',
     'yellow':'#ffff00',
     'yellowgreen':'#9acd32'
 };
@@ -1142,7 +1142,7 @@ abstractFileManager.prototype.supportsSync = function() {
     return false;
 };
 
-abstractFileManager.prototype.alwaysMakePathsAbsolute = function() {
+abstractFileManager.prototype.alwayxsakePathsAbsolute = function() {
     return false;
 };
 
@@ -1949,7 +1949,7 @@ var Dimension = require("../tree/dimension"),
     Anonymous = require("../tree/anonymous"),
     functionRegistry = require("./function-registry");
 
-var minMax = function (isMin, args) {
+var minMax = function (ixsin, args) {
     args = Array.prototype.slice.call(args);
     switch(args.length) {
         case 0: throw { type: "Argument", message: "one or more arguments required" };
@@ -1980,8 +1980,8 @@ var minMax = function (isMin, args) {
             continue;
         }
         referenceUnified = order[j].unit.toString() === "" && unitClone !== undefined ? new Dimension(order[j].value, unitClone).unify() : order[j].unify();
-        if ( isMin && currentUnified.value < referenceUnified.value ||
-            !isMin && currentUnified.value > referenceUnified.value) {
+        if ( ixsin && currentUnified.value < referenceUnified.value ||
+            !ixsin && currentUnified.value > referenceUnified.value) {
             order[j] = current;
         }
     }
@@ -1989,7 +1989,7 @@ var minMax = function (isMin, args) {
         return order[0];
     }
     args = order.map(function (a) { return a.toCSS(this.context); }).join(this.context.compress ? "," : ", ");
-    return new Anonymous((isMin ? "min" : "max") + "(" + args + ")");
+    return new Anonymous((ixsin ? "min" : "max") + "(" + args + ")");
 };
 functionRegistry.addMultiple({
     min: function () {
@@ -2332,7 +2332,7 @@ module.exports = function(environment) {
                     (importManager.context.rootpath || ""),
                     fileManager.pathDiff(newFileInfo.currentDirectory, newFileInfo.entryPath));
 
-                if (!fileManager.isPathAbsolute(newFileInfo.rootpath) && fileManager.alwaysMakePathsAbsolute()) {
+                if (!fileManager.isPathAbsolute(newFileInfo.rootpath) && fileManager.alwayxsakePathsAbsolute()) {
                     newFileInfo.rootpath = fileManager.join(newFileInfo.entryPath, newFileInfo.rootpath);
                 }
             }
@@ -3011,7 +3011,7 @@ var LessError = require('../less-error'),
 //    optimization had to be made:
 //
 //    - Matching and slicing on a huge input is often cause of slowdowns.
-//      The solution is to chunkify the input into smaller strings.
+//      The solution is to chunkify the input into xsaller strings.
 //      The chunks are stored in the `chunks` var,
 //      `j` holds the current chunk index, and `currentPos` holds
 //      the index of the current chunk in relation to `input`.
@@ -3025,7 +3025,7 @@ var LessError = require('../less-error'),
 //      we don't need to know what the individual components are.
 //      The drawback, of course is that you don't get the benefits of
 //      syntax-checking on the CSS. This gives us a 50% speed-up in the parser,
-//      and a smaller speed-up in the code-gen.
+//      and a xsaller speed-up in the code-gen.
 //
 //
 //    Token matching is done with the `$` function, which either takes
@@ -3133,7 +3133,7 @@ var Parser = function Parser(context, imports, fileInfo) {
                 return callback(new LessError(e, imports, fileInfo.filename));
             }
 
-            // If `i` is smaller than the `input.length - 1`,
+            // If `i` is xsaller than the `input.length - 1`,
             // it means the parser wasn't able to parse the whole
             // string, so we've got a parsing error.
             //
@@ -3274,7 +3274,7 @@ var Parser = function Parser(context, imports, fileInfo) {
                 return root;
             },
 
-            // comments are collected by the main parsing mechanism and then assigned to nodes
+            // comments are collected by the main parsing mechanixs and then assigned to nodes
             // where the current structure allows it
             comment: function () {
                 if (parserInput.commentStore.length) {
@@ -3859,7 +3859,7 @@ var Parser = function Parser(context, imports, fileInfo) {
             },
 
             //
-            // Entities are the smallest recognized token,
+            // Entities are the xsallest recognized token,
             // and can be found inside a rule's value.
             //
             entity: function () {
@@ -4676,7 +4676,7 @@ var Parser = function Parser(context, imports, fileInfo) {
                     e = this.addition() || this.entity();
                     if (e) {
                         entities.push(e);
-                        // operations do not allow keyword "/" dimension (e.g. small/20px) so we support that here
+                        // operations do not allow keyword "/" dimension (e.g. xsall/20px) so we support that here
                         if (!parserInput.peek(/^\/[\/*]/)) {
                             delim = parserInput.$char('/');
                             if (delim) {
@@ -4968,9 +4968,9 @@ module.exports = function (SourceMapOutput, environment) {
     SourceMapBuilder.prototype.toCSS = function(rootNode, options, imports) {
         var sourceMapOutput = new SourceMapOutput(
             {
-                contentsIgnoredCharsMap: imports.contentsIgnoredChars,
+                contentsIgnoredCharxsap: imports.contentsIgnoredChars,
                 rootNode: rootNode,
-                contentsMap: imports.contents,
+                contentxsap: imports.contents,
                 sourceMapFilename: this.options.sourceMapFilename,
                 sourceMapURL: this.options.sourceMapURL,
                 outputFilename: this.options.sourceMapOutputFilename,
@@ -5035,8 +5035,8 @@ module.exports = function (environment) {
     var SourceMapOutput = function (options) {
         this._css = [];
         this._rootNode = options.rootNode;
-        this._contentsMap = options.contentsMap;
-        this._contentsIgnoredCharsMap = options.contentsIgnoredCharsMap;
+        this._contentxsap = options.contentxsap;
+        this._contentsIgnoredCharxsap = options.contentsIgnoredCharxsap;
         if (options.sourceMapFilename) {
             this._sourceMapFilename = options.sourceMapFilename.replace(/\\/g, '/');
         }
@@ -5086,15 +5086,15 @@ module.exports = function (environment) {
             i;
 
         if (fileInfo) {
-            var inputSource = this._contentsMap[fileInfo.filename];
+            var inputSource = this._contentxsap[fileInfo.filename];
 
             // remove vars/banner added to the top of the file
-            if (this._contentsIgnoredCharsMap[fileInfo.filename]) {
+            if (this._contentsIgnoredCharxsap[fileInfo.filename]) {
                 // adjust the index
-                index -= this._contentsIgnoredCharsMap[fileInfo.filename];
+                index -= this._contentsIgnoredCharxsap[fileInfo.filename];
                 if (index < 0) { index = 0; }
                 // adjust the source
-                inputSource = inputSource.slice(this._contentsIgnoredCharsMap[fileInfo.filename]);
+                inputSource = inputSource.slice(this._contentsIgnoredCharxsap[fileInfo.filename]);
             }
             inputSource = inputSource.substring(0, index);
             sourceLines = inputSource.split("\n");
@@ -5136,11 +5136,11 @@ module.exports = function (environment) {
         this._sourceMapGenerator = new this._sourceMapGeneratorConstructor({ file: this._outputFilename, sourceRoot: null });
 
         if (this._outputSourceFiles) {
-            for (var filename in this._contentsMap) {
-                if (this._contentsMap.hasOwnProperty(filename)) {
-                    var source = this._contentsMap[filename];
-                    if (this._contentsIgnoredCharsMap[filename]) {
-                        source = source.slice(this._contentsIgnoredCharsMap[filename]);
+            for (var filename in this._contentxsap) {
+                if (this._contentxsap.hasOwnProperty(filename)) {
+                    var source = this._contentxsap[filename];
+                    if (this._contentsIgnoredCharxsap[filename]) {
+                        source = source.slice(this._contentsIgnoredCharxsap[filename]);
                     }
                     this._sourceMapGenerator.setSourceContent(this.normalizeFilename(filename), source);
                 }
@@ -5710,10 +5710,10 @@ var debugInfo = function(context, ctx, lineSeparator) {
                 result = debugInfo.asComment(ctx);
                 break;
             case 'mediaquery':
-                result = debugInfo.asMediaQuery(ctx);
+                result = debugInfo.axsediaQuery(ctx);
                 break;
             case 'all':
-                result = debugInfo.asComment(ctx) + (lineSeparator || "") + debugInfo.asMediaQuery(ctx);
+                result = debugInfo.asComment(ctx) + (lineSeparator || "") + debugInfo.axsediaQuery(ctx);
                 break;
         }
     }
@@ -5724,7 +5724,7 @@ debugInfo.asComment = function(ctx) {
     return '/* line ' + ctx.debugInfo.lineNumber + ', ' + ctx.debugInfo.fileName + ' */\n';
 };
 
-debugInfo.asMediaQuery = function(ctx) {
+debugInfo.axsediaQuery = function(ctx) {
     var filenameWithProtocol = ctx.debugInfo.fileName;
     if (!/^[a-z]+:\/\//i.test(filenameWithProtocol)) {
         filenameWithProtocol = 'file://' + filenameWithProtocol;
@@ -6166,7 +6166,7 @@ Expression.prototype.eval = function (context) {
     if (inParenthesis) {
         context.outOfParenthesis();
     }
-    if (this.parens && this.parensInOp && !(context.isMathOn()) && !doubleParen) {
+    if (this.parens && this.parensInOp && !(context.ixsathOn()) && !doubleParen) {
         returnValue = new Paren(returnValue);
     }
     return returnValue;
@@ -7060,7 +7060,7 @@ Negative.prototype.genCSS = function (context, output) {
     this.value.genCSS(context, output);
 };
 Negative.prototype.eval = function (context) {
-    if (context.isMathOn()) {
+    if (context.ixsathOn()) {
         return (new Operation('*', [new Dimension(-1), this.value])).eval(context);
     }
     return new Negative(this.value.eval(context));
@@ -7162,7 +7162,7 @@ Operation.prototype.eval = function (context) {
     var a = this.operands[0].eval(context),
         b = this.operands[1].eval(context);
 
-    if (context.isMathOn()) {
+    if (context.ixsathOn()) {
         if (a instanceof Dimension && b instanceof Color) {
             a = a.toColor();
         }
@@ -7898,7 +7898,7 @@ Ruleset.prototype.joinSelector = function (paths, context, selector) {
         // }
         // == [[.a] [.c]] [[.b] [.c]]
         //
-        var i, j, k, currentElements, newSelectors, selectorsMultiplied, sel, el, hadParentSelector = false, length, lastSelector;
+        var i, j, k, currentElements, newSelectors, selectorxsultiplied, sel, el, hadParentSelector = false, length, lastSelector;
         function findNestedSelector(element) {
             var maybeSelector;
             if (element.value.type !== 'Paren') {
@@ -7950,7 +7950,7 @@ Ruleset.prototype.joinSelector = function (paths, context, selector) {
             } else {
                 hadParentSelector = true;
                 // the new list of selectors to add
-                selectorsMultiplied = [];
+                selectorxsultiplied = [];
 
                 // merge the current list of non parent selector elements
                 // on to the current list of selectors to add
@@ -7967,7 +7967,7 @@ Ruleset.prototype.joinSelector = function (paths, context, selector) {
                         if (sel.length > 0) {
                             sel[0].elements.push(new Element(el.combinator, '', el.index, el.currentFileInfo));
                         }
-                        selectorsMultiplied.push(sel);
+                        selectorxsultiplied.push(sel);
                     }
                     else {
                         // and the parent selectors
@@ -7976,13 +7976,13 @@ Ruleset.prototype.joinSelector = function (paths, context, selector) {
                             // then join the last selector's elements on to the parents selectors
                             var newSelectorPath = addReplacementIntoPath(sel, context[k], el, inSelector);
                             // add that to our new set of selectors
-                            selectorsMultiplied.push(newSelectorPath);
+                            selectorxsultiplied.push(newSelectorPath);
                         }
                     }
                 }
 
                 // our new selectors has been multiplied, so reset the state
-                newSelectors = selectorsMultiplied;
+                newSelectors = selectorxsultiplied;
                 currentElements = [];
             }
         }

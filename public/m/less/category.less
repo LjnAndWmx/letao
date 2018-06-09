@@ -1,0 +1,50 @@
+@import "base.less";
+body{
+    background-color: #ccc;
+}
+.main {
+  display: flex;
+  .nav-left {
+    width: 100px;
+    padding-top: 10px;
+    ul {
+      > li {
+          background-color: #fff;
+          border-bottom: 1px solid #ccc;
+          border-right: 1px solid #ccc;
+        > a {
+            display: block;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            color: black;
+        }
+        &.active{
+            background-color: #ccc;
+        }
+      }
+    }
+  }
+  .nav-right {
+      position: relative;
+      flex: 1;
+      .mui-scroll-wrapper{
+        //   滚动原理：子盒子高度大于父盒子高度
+            height: 100%;
+            .mui-scroll{
+              min-height: 101%;
+              padding: 10px;
+              .mui-row{
+                  background-color: #fff;
+                  a{
+                      display: block;
+                      text-align: center;
+                      >img{
+                          width: 100%;
+                      }
+                  }
+              }
+          }
+      }
+  }
+}

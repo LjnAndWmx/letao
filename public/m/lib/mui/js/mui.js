@@ -6448,7 +6448,7 @@ Function.prototype.bind = Function.prototype.bind || function(to) {
 	var overFactor = 0.8;
 	var cell, a;
 
-	var isMoved = isOpened = openedActions = progress = false;
+	var ixsoved = isOpened = openedActions = progress = false;
 	var sliderHandle = sliderActionLeft = sliderActionRight = buttonsLeft = buttonsRight = sliderDirection = sliderRequestAnimationFrame = false;
 	var timer = translateX = lastTranslateX = sliderActionLeftWidth = sliderActionRightWidth = 0;
 
@@ -6522,7 +6522,7 @@ Function.prototype.bind = Function.prototype.bind || function(to) {
 			toggleActive(false);
 		}
 		cell = a = false;
-		isMoved = isOpened = openedActions = false;
+		ixsoved = isOpened = openedActions = false;
 		var target = event.target;
 		var isDisabled = false;
 		for (; target && target !== document; target = target.parentNode) {
@@ -6599,7 +6599,7 @@ Function.prototype.bind = Function.prototype.bind || function(to) {
 			if (!cell) {
 				return;
 			}
-			if (!isMoved) { //init
+			if (!ixsoved) { //init
 				sliderHandle = sliderActionLeft = sliderActionRight = buttonsLeft = buttonsRight = sliderDirection = sliderRequestAnimationFrame = false;
 				sliderHandle = cell.querySelector(SELECTOR_SLIDER_HANDLE);
 				if (sliderHandle) {
@@ -6625,14 +6625,14 @@ Function.prototype.bind = Function.prototype.bind || function(to) {
 			var angle = detail.angle;
 			if (direction === 'left' && (angle > 150 || angle < -150)) {
 				if (buttonsRight || (buttonsLeft && isOpened)) { //存在右侧按钮或存在左侧按钮且是已打开状态
-					isMoved = true;
+					ixsoved = true;
 				}
 			} else if (direction === 'right' && (angle > -30 && angle < 30)) {
 				if (buttonsLeft || (buttonsRight && isOpened)) { //存在左侧按钮或存在右侧按钮且是已打开状态
-					isMoved = true;
+					ixsoved = true;
 				}
 			}
-			if (isMoved) {
+			if (ixsoved) {
 				event.stopPropagation();
 				event.detail.gesture.preventDefault();
 				var translate = event.detail.deltaX;
@@ -6665,22 +6665,22 @@ Function.prototype.bind = Function.prototype.bind || function(to) {
 			}
 		},
 		flick: function(event) {
-			if (isMoved) {
+			if (ixsoved) {
 				event.stopPropagation();
 			}
 		},
 		swipeleft: function(event) {
-			if (isMoved) {
+			if (ixsoved) {
 				event.stopPropagation();
 			}
 		},
 		swiperight: function(event) {
-			if (isMoved) {
+			if (ixsoved) {
 				event.stopPropagation();
 			}
 		},
 		dragend: function(event) {
-			if (!isMoved) {
+			if (!ixsoved) {
 				return;
 			}
 			event.stopPropagation();
@@ -6689,7 +6689,7 @@ Function.prototype.bind = Function.prototype.bind || function(to) {
 				sliderRequestAnimationFrame = null;
 			}
 			var detail = event.detail;
-			isMoved = false;
+			ixsoved = false;
 			var action = 'close';
 			var actionsWidth = sliderDirection === 'toLeft' ? sliderActionRightWidth : sliderActionLeftWidth;
 			var isToggle = detail.swipe || (Math.abs(translateX) > actionsWidth / 2);

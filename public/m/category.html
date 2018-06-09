@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="./images/favicon.ico">
+    <!-- 引入站点图标，rel填写icon表示引入站点图标，href的路径就是图标路径 -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.min.css">
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.min.css">
+    <link rel="stylesheet/less" href="./less/category.less">
+    <!-- less编译器文件less.js -->
+    <script src="./lib/less/less.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 1.头部区域 -->
+    <header id="header">
+        <a href="javascript:;" class="fa fa-arrow-left" aria-hidden="true"></a>
+        <form action="#" class="search-form">
+            <input type="search" placeholder="请输入商品名称">
+        </form>
+        <a href="javascript:;" class="fa fa-search" aria-hidden="true"></a>
+    </header>
+    <main class="main">
+        <div class="nav-left">
+            <ul class="navleft">
+            </ul>
+        </div>
+        <div class="nav-right">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <div class="mui-row">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- 底部区域 -->
+    <section id="footer">
+        <div class="mui-row">
+            <div class="mui-col-xs-3">
+                <a href="index.html" class="fa fa-home active">
+                    <span>首页</span>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="category.html" class="fa fa-bars">
+                    <span>分类</span>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="cart.html" class="fa fa-shopping-cart">
+                    <span>购物车</span>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="user.html" class="fa fa-user">
+                    <span>会员中心</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!--左侧导航栏部分   i等等0代表第一个li标签 -->
+    <script type="text/html" id="leftnav">
+        {{each rows as value i}}
+        <li class="{{i==0?'active':''}}">
+            <a href="" data-id='{{value.id}}'>{{value.categoryName}}</a>
+        </li>
+        {{/each}}
+    </script>
+    <!-- 右侧导航栏部分 -->
+    <script type="text/html" id="rightnav">
+        {{each rows as item i}}
+        <div class="mui-col-xs-4">
+            <a href="">
+                <img src="{{item.brandLogo}}" alt="">
+                <p class="subtitle">{{item.brandName}}</p>
+            </a>
+        </div>
+        {{/each}}
+    </script>
+    <script src="./lib/mui/js/mui.min.js"></script>
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <script src="./lib/artTemplate/template.js"></script>
+    <script src="./js/category.js"></script>
+</body>
+
+</html>
